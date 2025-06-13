@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextGenDominatorsMC</title>
+  <link rel="icon" href="/Gallery/favicon_io/favicon-32x32.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <style>
+    body {
+      background-color: #000;
+      color: #FFD700;
+    }
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
+</head>
+<body class="font-sans">
+  <header class="bg-black text-yellow-400 p-6 border-b border-yellow-400">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <h1 class="text-3xl font-bold">NextGenDominatorsMC</h1>
+      </div>
+      <a href="https://discord.gg/xh5fJ5K5" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-300">Join our Discord</a>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-6">
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Server Info</h2>
+      <ul class="space-y-2 bg-black border border-yellow-400 p-4 rounded shadow">
+        <li><strong>Server Version:</strong> 1.21.80 (Bedrock)</li>
+        <li><strong>Hosting:</strong> SparkedHost</li>
+        <li><strong>Server Owner:</strong> NextGenDominators</li>
+        <li><strong>Server Address:</strong> nextgendominatorsmc.sparkedservers.us</li>
+        <li><strong>Server Port:</strong> 25546</li>
+        <li><strong>Achievements:</strong> On</li>
+        <li><strong>Access:</strong> Free for all to join</li>
+        <li><strong>Contact:</strong> nextgendominators@gmail.com</li>
+      </ul>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Server Rules</h2>
+      <ul class="list-disc list-inside bg-black border border-yellow-400 p-4 rounded shadow">
+        <li>Be Friendly</li>
+        <li>No Griefing</li>
+        <li>No Stealing</li>
+        <li>No PvP without reason</li>
+        <li>Fill Creeper hole</li>
+        <li>No toolbox</li>
+        <li>No xray</li>
+      </ul>
+    </section>
+
+    <section class="mb-8" x-data="{ current: 0, images: [
+      'Gallery/Photos/Mc1.jpg',
+      'Gallery/Photos/Mc2.jpg',
+      'Gallery/Photos/Mc3.jpg',
+      'Gallery/Photos/Mc4.png',
+      'Gallery/Photos/Mc5.jpg',
+      'Gallery/Photos/Mc6.jpg',
+      'Gallery/Photos/Mc7.jpg'] }">
+      <h2 class="text-2xl font-semibold mb-4">Gallery</h2>
+      <div class="relative w-full max-w-3xl mx-auto h-64 overflow-hidden">
+        <template x-for="(img, index) in images" :key="index">
+          <img x-show="current === index" x-cloak :src="img" alt="Server Screenshot"
+               class="absolute inset-0 w-full h-64 object-cover rounded shadow border border-yellow-400 transition-opacity duration-500">
+        </template>
+        <button @click="current = (current - 1 + images.length) % images.length" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-black px-3 py-1 rounded-l">&#10094;</button>
+        <button @click="current = (current + 1) % images.length" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-black px-3 py-1 rounded-r">&#10095;</button>
+      </div>
+      <div class="flex justify-center mt-4 space-x-2">
+        <template x-for="(img, index) in images" :key="index">
+          <button @click="current = index" :class="{'bg-yellow-400': current === index, 'bg-gray-700': current !== index }" class="w-3 h-3 rounded-full"></button>
+        </template>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Get Access</h2>
+      <p class="bg-black border border-yellow-400 p-4 rounded shadow">Want to join? Just contact the Admins via our Discord or email us at <a href="mailto:nextgendominators@gmail.com" class="text-yellow-400 underline">nextgendominators@gmail.com</a>.</p>
+    </section>
+  </main>
+
+  <footer class="bg-black text-center text-yellow-500 py-4 border-t border-yellow-400">
+    &copy; 2025 NextGenDominatorsMC. All rights reserved.
+  </footer>
+</body>
+</html>
