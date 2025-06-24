@@ -7,23 +7,33 @@
   <meta name="description" content="Official webpage of NextGenDominatorsMC - a public Minecraft Bedrock survival server with achievements enabled.">
   <meta name="keywords" content="Minecraft Bedrock, Survival Server, NextGenDominators, MC Server, Aternos, SparkedHost">
   <meta name="author" content="NextGenDominators">
-  <link rel="apple-touch-icon" sizes="57x57" href="Gallery/favicon_io/apple-icon-57x57.png"> <!--apple-icon-57x57.png-->
-  <link rel="apple-touch-icon" sizes="60x60" href="Gallery/favicon_io/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="Gallery/favicon_io/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="Gallery/favicon_io/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="Gallery/favicon_io/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="Gallery/favicon_io/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="Gallery/favicon_io/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="Gallery/favicon_io/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="Gallery/favicon_io/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="Gallery/favicon_io/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="Gallery/favicon_io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="Gallery/favicon_io/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="Gallery/favicon_io/favicon-16x16.png">
-  <link rel="manifest" href="Gallery/favicon_io/manifest.json">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="gallery/favicon_io/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="gallery/favicon_io/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="gallery/favicon_io/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="gallery/favicon_io/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="gallery/favicon_io/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="gallery/favicon_io/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="gallery/favicon_io/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="gallery/favicon_io/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="gallery/favicon_io/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="gallery/favicon_io/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="gallery/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="gallery/favicon_io/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="gallery/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="gallery/favicon_io/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="Gallery/favicon_io/ms-icon-144x144.png">
+  <meta name="msapplication-TileImage" content="gallery/favicon_io/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
+
+  <!-- Open Graph / Twitter Meta -->
+  <meta property="og:title" content="NextGenDominatorsMC Server">
+  <meta property="og:description" content="Join our Minecraft Bedrock survival server with achievements enabled.">
+  <meta property="og:image" content="https://yourdomain.com/gallery/Photos/Mc1.jpg">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <style>
@@ -46,7 +56,7 @@
     </div>
   </header>
 
-  <main class="container mx-auto px-4 py-6">
+  <main class="container mx-auto max-w-5xl px-4 py-6">
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">Server Info</h2>
       <ul class="space-y-2 bg-black border border-yellow-400 p-4 rounded shadow text-sm sm:text-base">
@@ -74,22 +84,24 @@
       </ul>
     </section>
 
-    <section class="mb-8" x-data="{ current: 0, images: [
-      'Gallery/Photos/Mc1.jpg',
-      'Gallery/Photos/Mc2.jpg',
-      'Gallery/Photos/Mc3.jpg',
-      'Gallery/Photos/Mc4.png',
-      'Gallery/Photos/Mc5.jpg',
-      'Gallery/Photos/Mc6.jpg',
-      'Gallery/Photos/Mc7.jpg'] }">
-      <h2 class="text-2xl font-semibold mb-4">Gallery</h2>
+    <section class="mb-8" aria-labelledby="gallery-title" x-data="{ current: 0, images: [
+      'gallery/Photos/Mc1.jpg',
+      'gallery/Photos/Mc2.jpg',
+      'gallery/Photos/Mc3.jpg',
+      'gallery/Photos/Mc4.png',
+      'gallery/Photos/Mc5.jpg',
+      'gallery/Photos/Mc6.jpg',
+      'gallery/Photos/Mc7.jpg'] }">
+      <h2 id="gallery-title" class="text-2xl font-semibold mb-4">Gallery</h2>
       <div class="relative w-full max-w-3xl mx-auto h-64 overflow-hidden">
         <template x-for="(img, index) in images" :key="index">
-          <img x-show="current === index" x-cloak :src="img" alt="Server Screenshot"
-               class="absolute inset-0 w-full h-64 object-cover rounded shadow border border-yellow-400 transition-opacity duration-500">
+          <img x-show="current === index" x-cloak :src="img" loading="lazy" alt="Server Screenshot"
+               class="absolute inset-0 w-full h-64 object-cover rounded shadow border border-yellow-400 transition-opacity duration-500 ease-in-out">
         </template>
-        <button @click="current = (current - 1 + images.length) % images.length" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-black px-3 py-1 rounded-l">&#10094;</button>
-        <button @click="current = (current + 1) % images.length" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-black px-3 py-1 rounded-r">&#10095;</button>
+        <button aria-label="Previous image" @click="current = (current - 1 + images.length) % images.length"
+          class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-black px-3 py-1 rounded-l">&#10094;</button>
+        <button aria-label="Next image" @click="current = (current + 1) % images.length"
+          class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-black px-3 py-1 rounded-r">&#10095;</button>
       </div>
       <div class="flex justify-center mt-4 space-x-2">
         <template x-for="(img, index) in images" :key="index">
@@ -100,7 +112,10 @@
 
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">Get Access</h2>
-      <p class="bg-black border border-yellow-400 p-4 rounded shadow text-sm sm:text-base">Want to join? Just contact the Admins via our Discord or email us at <a href="mailto:nextgendominators@gmail.com" class="text-yellow-400 underline">nextgendominators@gmail.com</a>.</p>
+      <p class="bg-black border border-yellow-400 p-4 rounded shadow text-sm sm:text-base">
+        Want to join? Just contact the Admins via our Discord or email us at
+        <a href="mailto:nextgendominators@gmail.com" class="text-yellow-400 underline">nextgendominators@gmail.com</a>.
+      </p>
     </section>
   </main>
 
